@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+
+<link 
+  rel="stylesheet" 
+  href="{{ url_for('static', filename='style.css') }}"
+>
+</head>
+<body>
+  <div class="container">
+    <h1>Sigup</h1><hr>
+    <form action="/signup" method="POST">
+      <input name="name" placeholder="Nome"><br>
+      <input type="email" name="email" placeholder="E-mail"><br>
+      <input type="password" name="password" placeholder="Senha"><hr>
+      <button type="submit">
+        <img style="width: 35px;" src="{{ url_for('static', filename='images/icons/add.png') }}">
+      </button>
+    </form>
+    <a href="/login">Login</a>
+  </div>
+</body>
+</html>
