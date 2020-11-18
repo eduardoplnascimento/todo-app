@@ -18,6 +18,12 @@ class TodoController():
 
   def delete(id):
     todo = Todo.query.filter_by(id=id).first()
+    if todo.user_id != current_user.id:
+      return redirect(url_for('web.index'))
+    
+    if todo.complete != True:
+      return redirect(url_for('web.index'))
+      
     db.session.delete(todo)
     db.session.commit()
     return redirect(url_for('web.index'))
